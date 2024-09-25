@@ -74,19 +74,29 @@ console.log("Number of 'w's: " + howMany);
 
 ///////////////// task05 ////////////////////
 
-let prime: number = 5;
-let isPrime: boolean = true;
+let array: number[] = [5, 10, 20];
 
-for (let i = 2; i <= prime / 2; i++) {
-    if (prime % i == 0) {
-        console.log(prime + " is not a prime number");
-        isPrime = false;
-        break;
+for (let j = 0; j < array.length; j++) {
+    let isPrime: boolean = true;
+    let numberToCheck = array[j];
+
+    if (numberToCheck <= 1) {
+        isPrime = false; 
+    } else {
+        for (let i = 0; i <= numberToCheck / 2; i++) {
+            if (numberToCheck % i === 0) {
+                console.log(numberToCheck + " is not a prime number");
+                isPrime = false;
+                break;
+            }
+        }
+    }
+
+    if (isPrime) {
+        console.log(numberToCheck + " is a prime number");
     }
 }
 
-if (isPrime) {
-    console.log(prime + " is a prime number");
-}
+
 
 

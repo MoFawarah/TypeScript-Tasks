@@ -38,15 +38,23 @@ for (var i = 0; i < word.length; i++) {
 }
 console.log("Number of 'w's: " + howMany);
 ///////////////// task05 ////////////////////
-var prime = 5;
-var isPrime = true;
-for (var i = 2; i <= prime / 2; i++) {
-    if (prime % i == 0) {
-        console.log(prime + " is not a prime number");
+var array = [5, 10, 20];
+for (var j = 0; j < array.length; j++) {
+    var isPrime = true;
+    var numberToCheck = array[j];
+    if (numberToCheck <= 1) {
         isPrime = false;
-        break;
     }
-}
-if (isPrime) {
-    console.log(prime + " is a prime number");
+    else {
+        for (var i = 0; i <= numberToCheck / 2; i++) {
+            if (numberToCheck % i === 0) {
+                console.log(numberToCheck + " is not a prime number");
+                isPrime = false;
+                break;
+            }
+        }
+    }
+    if (isPrime) {
+        console.log(numberToCheck + " is a prime number");
+    }
 }
